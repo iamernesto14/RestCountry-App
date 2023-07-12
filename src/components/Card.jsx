@@ -6,10 +6,10 @@ export default function Card({ flags, name, population, region, subregion }) {
     <>
       <Link to={`/${name.common}`}>
         <article className="bg-white hover:bg-gray-50 rounded-lg transition-all duration-200 shadow overflow-hidden">
-          <img src={flags.svg} alt="" className="md:h-40 w-full object-cover" />
+          <img src={flags.svg} alt={flags.alt} className="md:h-40 w-full object-cover" />
           <div className="px-4 py-7">
             <h2 className="text-lg text-black mb-4 font-bold">{name.common}</h2>
-            <ul className="flex flex-col items-start justify-start gap-1 dark:text-gray-400">
+            <ul className="flex flex-col items-start justify-start gap-1">
               <li>
                 <span className="font-bold">Population:</span>{" "}
                 {population.toLocaleString()}
