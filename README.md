@@ -42,7 +42,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [@github](https://github.com/iamernesto14/RestCountry-App)
-- Live Site URL: [@github pages]()
+- Live Site URL: [@netlify](ernest-countries-app.netlify.app)
 
 ## My process
 
