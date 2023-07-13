@@ -29,6 +29,10 @@ export default function HomePage() {
   ];
 
   useEffect(() => {
+    document.title = `Countries | App`
+  }, [])
+
+  useEffect(() => {
     const getCountries = async () => {
       try {
         const res = await fetch("https://restcountries.com/v3.1/all");

@@ -20,6 +20,10 @@ export default function CountryDetails() {
     getCountryDetails();
   }, [name]);
 
+  useEffect(() => {
+    document.title = `Countries | ${name}`
+  }, [name])
+
   let currenciesArr = [];
 
   let languagesArr = [];
