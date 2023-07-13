@@ -10,5 +10,5 @@ body {
     font-size: 14px;
     -webkit-font-smoothing: antialised;
     -moz-osx-font-smoothing: grayscale;
-    background-color: whitesmoke;
+    @apply bg-main-200 dark:bg-main-900;
 }

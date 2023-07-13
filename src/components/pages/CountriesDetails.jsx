@@ -27,10 +27,10 @@ export default function CountryDetails() {
   return (
     <>
       <Header />
-      <section className="p-8 md:py-0 max-w-7xl mx-auto md:h-screen text-base text-main-900 dark:text-main-200">
+      <section className="p-8 md:py-0 max-w-7xl mx-auto md:h-screen text-base text-main-900 dark:text-main-100">
         <Link
           to="/"
-          className="inline-block my-12 bg-main-100 py-2 px-6 rounded shadow-[0_0_5px_rgba(0,0,0,0.3)] text-gray-700 hover:bg-gray-200 transition-all duration-200 dark:bg-main-600 dark:text-gray-400"
+          className="inline-block my-12 bg-main-100 dark:bg-main-600 py-2 px-6 rounded shadow-[0_0_5px_rgba(0,0,0,0.3)] text-gray-700 hover:bg-main-200 transition-all duration-200"
         >
           &larr; Back
         </Link>
@@ -45,39 +45,39 @@ export default function CountryDetails() {
             </article>
 
             <article>
-              <h1 className="mb-8 text-gray-900 dark:text-white text-3xl lg:text-5xl">
+              <h1 className="mb-8 text-gray-900 dark:text-white font-bold leading-[3rem] text-[28px] lg:text-[44px]">
                 {item.name.official}
               </h1>
 
               <div className="lg:flex flex-row gap-24 items-start mb-8">
-                <ul className="my-4 flex flex-col items-start justify-start gap-2 text-slate-700 dark:text-gray-400">
+                <ul className="my-4 flex flex-col items-start justify-start gap-2 text-slate-700 dark:text-main-400">
                   <li>
-                    <span className="font-bold">Native Name:</span>{" "}
+                    <span className="font-bold dark:text-main-100">Native Name:</span>{" "}
                     {
                       item.name.nativeName[Object.keys(item.name.nativeName)[0]]
                         .common
                     }
                   </li>
                   <li>
-                    <span className="font-bold">Population:</span>
+                    <span className="font-bold dark:text-main-100">Population:</span>
                     {item.population.toLocaleString()}
                   </li>
                   <li>
-                    <span className="font-bold">Region:</span> {item.region}
+                    <span className="font-bold dark:text-main-100">Region:</span> {item.region}
                   </li>
                   <li>
-                    <span className="font-bold">Sub Region:</span>{" "}
+                    <span className="font-bold dark:text-main-100">Sub Region:</span>{" "}
                     {item.subregion}
                   </li>
                   <li>
-                    <span className="font-bold">Capital:</span>{" "}
+                    <span className="font-bold dark:text-main-100">Capital:</span>{" "}
                     {item.capital[0]}
                   </li>
                 </ul>
 
-                <ul className="my-4 text-slate-700 dark:text-gray-400">
+                <ul className="my-4 text-main-900 dark:text-main-400">
                   <li>
-                    <span className="font-bold">Top Level Domain:</span>{" "}
+                    <span className="font-bold dark:text-main-100">Top Level Domain:</span>{" "}
                     {item.tld[0]}
                   </li>
                   <li>
@@ -86,7 +86,7 @@ export default function CountryDetails() {
                         return currenciesArr.push(item.currencies[curr].name);
                       })}
                     </span>
-                    <span className="font-bold">
+                    <span className="font-bold dark:text-main-100">
                       {currenciesArr.length === 1
                         ? "Currency: "
                         : "Currencies: "}{" "}
@@ -94,14 +94,14 @@ export default function CountryDetails() {
                     {currenciesArr.join(", ")}
                   </li>
                   <li>
-                    <span className="hidden">
+                    <span className="hidden dark:text-main-100">
                       {" "}
                       {Object.keys(item.languages).map((lang) => {
                         return languagesArr.push(item.languages[lang]);
                       })}
                     </span>
 
-                    <span className="font-bold">
+                    <span className="font-bold dark:text-main-100">
                       {languagesArr.length === 1 ? "Language: " : "Languages: "}
                     </span>
                     {languagesArr.join(", ")}
