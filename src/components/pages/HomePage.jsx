@@ -1,6 +1,7 @@
 import React from "react";
 import Card from "../Card";
 import { useState, useEffect } from "react";
+import { BsSearch } from "react-icons/bs";
 import Header from './../Header';
 
 export default function HomePage() {
@@ -94,7 +95,7 @@ export default function HomePage() {
               className="w-full md:w-[420px] lg:w-[400px] bg-main-100 dark:bg-main-600"
             >
               <div className="flex items-center gap-5 p-4 rounded shadow dark:shadow-sm outline-none transition-all duration-200">
-                {/* <BsSearch className="ml-5 text-xl" /> */}
+                <BsSearch className="ml-5 text-xl text-main-400" />
                 <input
                   type="text"
                   name="search"

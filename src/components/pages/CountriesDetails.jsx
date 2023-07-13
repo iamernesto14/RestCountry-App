@@ -50,34 +50,34 @@ export default function CountryDetails() {
               </h1>
 
               <div className="lg:flex flex-row gap-24 items-start mb-8">
-                <ul className="my-4 flex flex-col items-start justify-start gap-2 text-slate-700 dark:text-main-400">
+                <ul className="my-4 flex flex-col items-start justify-start gap-2 text-slate-700 text-main-400 dark:text-main-400">
                   <li>
-                    <span className="font-bold dark:text-main-100">Native Name:</span>{" "}
+                    <span className="font-bold dark:text-main-100 text-main-900">Native Name:</span>{" "}
                     {
                       item.name.nativeName[Object.keys(item.name.nativeName)[0]]
                         .common
                     }
                   </li>
                   <li>
-                    <span className="font-bold dark:text-main-100">Population:</span>
-                    {item.population.toLocaleString()}
+                    <span className="font-bold dark:text-main-100 text-main-900">Population:</span>
+                    {' '}{item.population.toLocaleString()}
                   </li>
                   <li>
-                    <span className="font-bold dark:text-main-100">Region:</span> {item.region}
+                    <span className="font-bold dark:text-main-100 text-main-900">Region:</span> {item.region}
                   </li>
                   <li>
-                    <span className="font-bold dark:text-main-100">Sub Region:</span>{" "}
+                    <span className="font-bold dark:text-main-100 text-main-900">Sub Region:</span>{" "}
                     {item.subregion}
                   </li>
                   <li>
-                    <span className="font-bold dark:text-main-100">Capital:</span>{" "}
+                    <span className="font-bold dark:text-main-100 text-main-900">Capital:</span>{" "}
                     {item.capital[0]}
                   </li>
                 </ul>
 
-                <ul className="my-4 text-main-900 dark:text-main-400">
+                <ul className="my-4 dark:text-main-400 text-main-400">
                   <li>
-                    <span className="font-bold dark:text-main-100">Top Level Domain:</span>{" "}
+                    <span className="font-bold dark:text-main-100 text-main-900">Top Level Domain:</span>{" "}
                     {item.tld[0]}
                   </li>
                   <li>
@@ -86,7 +86,7 @@ export default function CountryDetails() {
                         return currenciesArr.push(item.currencies[curr].name);
                       })}
                     </span>
-                    <span className="font-bold dark:text-main-100">
+                    <span className="font-bold dark:text-main-100 text-main-900">
                       {currenciesArr.length === 1
                         ? "Currency: "
                         : "Currencies: "}{" "}
@@ -94,14 +94,14 @@ export default function CountryDetails() {
                     {currenciesArr.join(", ")}
                   </li>
                   <li>
-                    <span className="hidden dark:text-main-100">
+                    <span className="hidden dark:text-main-100 text-main-900">
                       {" "}
                       {Object.keys(item.languages).map((lang) => {
                         return languagesArr.push(item.languages[lang]);
                       })}
                     </span>
 
-                    <span className="font-bold dark:text-main-100">
+                    <span className="font-bold dark:text-main-100 text-main-900">
                       {languagesArr.length === 1 ? "Language: " : "Languages: "}
                     </span>
                     {languagesArr.join(", ")}
