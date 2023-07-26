@@ -121,18 +121,18 @@ export default function CountryDetails() {
                     </h3>
 
                     <div className="flex flex-wrap items-start justify-start gap-2">
-                      {item.borders.map((border) => {
-                        return (
+                      {item.borders.map((border) => 
+                         (
                           <Link
-                            to={`/${border}`}
+                          to={`/${border}`}
                             key={border}
-                            state={border}
+                            // state={border}
                             className="py-1 px-3 rounded text-xs tracking-wide shadow-[0_0_5px_rgba(0,0,0,0.3)] cursor-pointer"
                           >
                             {border}
                           </Link>
-                        );
-                      })}
+                        
+                      ))}
                     </div>
                   </div>
                 </>
