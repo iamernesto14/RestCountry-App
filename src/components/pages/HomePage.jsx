@@ -7,6 +7,7 @@ import Header from './../Header';
 export default function HomePage() {
   const [countries, setCountries] = useState([]);
   const [searchText, setSearchText] = useState("");
+  const [searchResult, setSearchResult] = useState([])
   const regions = [
     {
       name: "Filter by Region",
@@ -58,6 +59,13 @@ export default function HomePage() {
     }
   };
 
+  useEffect(() => {
+    const filteredCountries = countries.filter((country) =>
+      country.name.common.toLowerCase().includes(searchText.toLowerCase())
+    );
+    setSearchResult(filteredCountries);
+  }, [searchText, countries]);
+
   async function filterByRegion(region) {
     try {
       const res = await fetch(
@@ -102,10 +110,9 @@ export default function HomePage() {
                 <BsSearch className="ml-5 text-xl text-main-400" />
                 <input
                   type="text"
-                  name="search"
                   id="search"
                   value={searchText}
-                  onChange={(e) => setSearchText(e.target.value)}
+                  onChange={(e) => setSearchText(e.target.value.toLowerCase())}
                   placeholder="Search for a country..."
                   required
                   className="w-full text-md outline-none bg-main-100 dark:text-main-100 placeholder:dark:text-main-400 dark:bg-main-600"
@@ -131,10 +138,22 @@ export default function HomePage() {
             
           </div>
 
-          <div className="grid grid-cols-1 gap-6 md:grid-cols-3 lg:grid-cols-4">
-            {countries.map((country) => (
+          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+          {searchText.trim() !== "" ? (
+            searchResult.length > 0 ? (
+              searchResult.map((country) => (
+                <Card key={country.name.common} {...country} />
+              ))
+            ) : (
+              <p className="text-main-900 dark:text-main-100 font-bold uppercase tracking-wide text-center h-screen text-base">
+                Country doesn't exist.
+              </p>
+            )
+          ) : (
+            countries.map((country) => (
               <Card key={country.name.common} {...country} />
-            ))}
+            ))
+          )}
           </div>
         </section>
       )}
